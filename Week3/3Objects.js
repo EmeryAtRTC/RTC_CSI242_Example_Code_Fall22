@@ -58,8 +58,22 @@ student3.set("firstName", "Kyle");
 student3.set("lastName", "Smith");
 student3.set("studentId", 30498234);
 student3.set("grades", [98, 60, 99]);
+student3.set("calculateAvgGrade", () => {
+    let total = 0;
+    student3.get("grades").forEach((grade) => {
+        total+=grade;
+    });
+    return total / student3.get("grades").length;
+});
+//caling calculateAvgGrade
+console.log(student3.get("calculateAvgGrade")());
+//assigning to variable before calling
+let average = student3.get("calculateAvgGrade")();
+console.log(average);
 //an object can be a key
 student3.set(student1, "This is the value associated with student1");
+
+
 
 console.log(student3.get(student1));
 //looping through a map
