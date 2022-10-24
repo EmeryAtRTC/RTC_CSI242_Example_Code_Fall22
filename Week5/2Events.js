@@ -9,6 +9,7 @@ let groceryList;
 let txtGroceryItem;
 let btnAdd;
 let btnRemove;
+let keyPressLog;
 
 //we can think of this as the constructor
 window.addEventListener('load', function(){
@@ -16,6 +17,8 @@ window.addEventListener('load', function(){
     txtGroceryItem = document.getElementById('txt-grocery-item');
     btnAdd = document.getElementById('btn-add');
     btnRemove = document.getElementById('btn-remove');
+    keyPressLog = document.getElementById('key-press-log');
+    console.log(keyPressLog);
     //add an event listener to the input txtGroceryItem
     txtGroceryItem.addEventListener('focusin', toggleBorder);
     txtGroceryItem.addEventListener('focusout', toggleBorder);
@@ -23,6 +26,18 @@ window.addEventListener('load', function(){
     btnAdd.addEventListener('focusout', toggleBorder);
     btnRemove.addEventListener('focusin', toggleBorder);
     btnRemove.addEventListener('focusout', toggleBorder);
+    //we can add events to the window
+    window.addEventListener('keydown', function(event){
+        keyPressLog.innerHTML += `<br> ${event.key} ${event.type}`;
+    });
+    //similar event using arrow function
+    window.addEventListener('keyup', event => {
+        keyPressLog.innerHTML += `<br> ${event.key} ${event.type}`;
+    });
+    //now using keypress
+    window.addEventListener('keypress', event => {
+        keyPressLog.innerHTML += `<br> ${event.key} ${event.type}`;
+    });
 
 })
 
