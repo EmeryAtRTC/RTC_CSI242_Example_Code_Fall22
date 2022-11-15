@@ -17,7 +17,7 @@ let promise1 = new Promise(function(resolve, reject){
 //log the promise
 //The promise is called using the then() method
 //console.log(promise1.then());
-//call this the correct way passing functions to the callbacks (resole and reject)
+//call this the correct way passing functions to the callbacks (resolve and reject)
 promise1.then(
     function(value){
         document.write(value);
@@ -42,11 +42,11 @@ let promise2 = new Promise(function(resolve, reject){
 });
 
 //calling promise2 using a display method for success
-// promise2.then((success) => {
-//     display(success);
-// }, (error) => {
-//     console.log(error);
-// });
+promise2.then((success) => {
+    display(success);
+}, (error) => {
+    console.log(error);
+});
 //Another way to call the reject method, using the catch
 promise2.then((success) => {
     display(success)
