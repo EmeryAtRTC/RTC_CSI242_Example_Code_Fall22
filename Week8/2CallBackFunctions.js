@@ -34,3 +34,14 @@ function getSomeData(callBack){
     //when our processing is done
     callBack(array);
 }
+
+let array = [1, 4, 5, 6, 7];
+array.forEach(x => {
+    console.log(x);
+});
+
+getSomeData(data => {
+    data.forEach(x => {
+        console.log(x);
+    })
+});
