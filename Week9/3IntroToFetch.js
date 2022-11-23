@@ -65,6 +65,7 @@ function getAPI(){
     })
     .then(json => {
         let output = '';
+        //These are JS Objects, not string
         json.forEach(post => {
             output += `Id: ${post.id} User Id: ${post.userId} Title: ${post.title} Body: ${post.body}</br>`;
         })
